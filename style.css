@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* Black Background for First Page */
@@ -16,10 +17,11 @@ body {
 header {
     width: 100%;
     padding: 20px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
 
 nav {
@@ -48,6 +50,11 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: white;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #E64B2A;
 }
 
 .contact-btn {
@@ -74,6 +81,7 @@ nav ul li a {
     max-width: 1100px;
     margin: auto;
     text-align: left;
+    padding-top: 80px; /* To avoid overlap with fixed header */
 }
 
 .hero-content {
@@ -102,25 +110,6 @@ nav ul li a {
     border: 3px solid #E64B2A;
 }
 
-.resume-btn-container {
-    margin-top: 20px;
-}
-
-.resume-btn {
-    background-color: orange;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    display: inline-block;
-}
-
-.resume-btn:hover {
-    background-color: darkorange;
-}
-
 /* White Background for About Section */
 .about-section {
     background-color: white;
@@ -128,4 +117,39 @@ nav ul li a {
     padding: 50px;
     text-align: center;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Black Background for Projects Section */
+.projects-section {
+    background-color: black;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* White Background for Skills Section */
+.skills-section {
+    background-color: white;
+    color: black;
+    padding: 50px;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #000000;
+    color: white;
 }
