@@ -16,6 +16,24 @@
         html {
             scroll-behavior: smooth;
         }
+        /* Center align About Me section */
+        .about-section {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        /* Black background for Projects section */
+        .projects-section {
+            background-color: black;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        /* White background for Skills section */
+        .skills-section {
+            background-color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -24,8 +42,8 @@
             <div class="logo">Gauri Mahalle</div>
             <ul>
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#resume">Resume</a></li>
                 <li><a href="#contact" class="contact-btn">Contact Me</a></li>
             </ul>
         </nav>
@@ -36,7 +54,6 @@
             <p>Hi, I am</p>
             <h1>Gauri Mahalle</h1>
             <h3>A passionate Data Analyst transforming data into actionable insights, based in Texas, USA.</h3>
-            <button class="btn">Download CV</button>
         </div>
         <div class="hero-image">
             <img src="photo.jpeg" alt="Gauri Mahalle's photo">
@@ -51,7 +68,15 @@
         </p>
     </section>
 
-   
+    <section id="projects" class="projects-section">
+        <h2>Projects</h2>
+        <p>Explore some of my data-driven projects where I applied machine learning, visualization, and analytics to real-world problems.</p>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <h2>Skills</h2>
+        <p>Proficient in Python, SQL, Tableau, Machine Learning, and Data Visualization.</p>
+    </section>
 
     <footer>
         <p>&copy; 2025 Gauri Mahalle</p>
