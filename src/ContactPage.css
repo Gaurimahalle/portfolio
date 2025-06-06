@@ -1,0 +1,214 @@
+.contact-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 2rem;
+  background: #000000; /* Solid black background instead of gradient */
+}
+  
+.contact-content {
+  max-width: 1200px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+  
+.contact-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+  
+.contact-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+}
+  
+.contact-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #CC7351;
+}
+  
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  padding: 2rem;
+  /* Removed box styling (background, border-radius, backdrop-filter, box-shadow) */
+}
+  
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+  
+.form-group label {
+  font-size: 1rem;
+  color: #ffffff;
+}
+  
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+  
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #CC7351;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+  
+.submit-btn {
+  padding: 1rem 2rem;
+  background-color: #CC7351;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+  
+.submit-btn:hover {
+  background-color: #b05e3e;
+  transform: translateY(-3px);
+}
+  
+.social-icons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  width: 100%;
+}
+  
+.social-icons-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* Changed to white to be visible on black background */
+  text-align: center;
+}
+  
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+  
+.social-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #333; /* Changed from black to dark gray for visibility on black background */
+  border-radius: 50%;
+  padding: 10px;
+  transition: all 0.3s ease;
+  color: white;
+}
+  
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+}
+  
+.social-icon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Changed shadow color for visibility */
+}
+  
+/* For small screens */
+@media (max-width: 600px) {
+  .social-icons {
+    gap: 1rem;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+  
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-content h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
+  }
+  
+  .contact-details {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Contact intro text styles */
+.contact-intro {
+  margin-bottom: 3rem;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.contact-intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff; /* White text color */
+  font-family: "Times New Roman", Times, serif;
+}
+
+.contact-intro p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+  color: #ffffff; /* White text color */
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Social icons spacing */
+.social-icons-container {
+  margin-top: 2rem;
+}
+
+/* Make sure icons remain visible in dark mode */
+.social-icon svg {
+  fill: #ffffff;
+}
+
+/* For dark/light mode consistency */
+.dark .contact-intro h1,
+.dark .contact-intro p,
+.light .contact-intro h1,
+.light .contact-intro p {
+  color: #ffffff; /* White text color in both modes */
+  font-family: "Times New Roman", Times, serif;
+}

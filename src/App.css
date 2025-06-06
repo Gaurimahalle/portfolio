@@ -1,0 +1,1524 @@
+/* Import the Lora font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+/* Base styles for the whole site */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden !important; /* Prevent horizontal scrolling */
+  background-color: #000000;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  width: 100%; /* Ensure body takes full width without overflow */
+  max-width: 100vw; /* Limit max width to viewport width */
+  box-sizing: border-box; /* Include padding in width calculation */
+  position: relative;
+}
+
+body {
+  overflow-x: hidden !important; /* Double enforcement for body */
+}
+
+*, *:before, *:after {
+  box-sizing: border-box; /* Apply box-sizing to all elements */
+  max-width: 100vw;
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.app-container {
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden !important;
+  background-color: #000000;
+  width: 100%;
+  max-width: 100vw; /* Limit max width to viewport width */
+  position: relative;
+}
+
+/* Gradient Background Styles */
+.gradient-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.gradient-circle {
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+}
+
+.left-circle {
+  bottom: 0;
+  left: -20%;
+  top: -10%;
+  background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0));
+}
+
+.right-circle {
+  bottom: 0;
+  right: -20%;
+  top: -10%;
+  background: radial-gradient(circle farthest-side, rgba(255, 0, 182, 0.15), rgba(255, 255, 255, 0));
+}
+
+/* Make sure particles and content appear above the background */
+.App-header, .nav-controls, .menu-box {
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure the particles display over the gradient but under the content */
+#tsparticles {
+  z-index: 1 !important;
+}
+
+/* First Page Styles */
+.App {
+  display: flex;
+  justify-content: flex-start; /* Align to the left */
+  align-items: center; /* Keep vertically centered */
+  height: 100vh;
+  padding-left: 50px; /* Add space on the left side */
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #000000;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.App-header {
+  color: white;
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  z-index: 2;
+  transition: color 0.3s ease;
+  max-width: 100%;
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.App-header h2 {
+  font-size: 4rem;
+  margin: 10px 0;
+  color: #CC7351;
+}
+
+/* Two-line text styles */
+.two-line-text {
+  margin: 10px 0;
+  text-align: left;
+  max-width: 90%;
+}
+
+.two-line-text p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 0; /* Remove default margin to keep lines tight */
+}
+
+.data-analyst {
+  color: #E6B25C; /* Your desired color */
+  display: inline;  /* Keeps the span as an inline element */
+}
+
+.waving-hand {
+  display: inline-block;
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+/* CSS Animation for waving hand emoji */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Global Navigation Controls - Updated for global positioning */
+.nav-controls {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* High z-index to appear on all pages */
+  gap: 20px; /* Consistent spacing between all nav elements */
+}
+
+/* Space between nav elements - make them consistent */
+.menu-icon, .theme-toggle {
+  margin-left: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+/* Resume button styling - updated with transparent background and border */
+.resume-button {
+  background: transparent;
+  font-size: 16px;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0;
+  border: 2px solid white;
+  transition: all 0.3s ease;
+  height: auto;
+  min-width: 180px;
+  gap: 8px; /* Space between text and icon */
+}
+
+/* Light/dark mode adjustments */
+.dark .resume-button {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.light .resume-button {
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+}
+
+.resume-button:hover {
+  transform: translateY(-2px);
+  opacity: 0.7;
+}
+
+/* Menu Icon */
+.menu-icon {
+  cursor: pointer;
+  z-index: 100;
+  transition: color 0.3s ease;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Dark Mode Styles */
+.App.dark {
+  background-color: #000000;
+}
+
+.App.dark .App-header {
+  color: white;
+}
+
+.App.dark .menu-box {
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+}
+
+/* Light Mode Styles */
+.App.light {
+  background-color: #f9f9f9;
+}
+
+.App.light .App-header {
+  color: black;
+}
+
+.App.light .menu-box {
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+/* Global Menu Box - Updated for global positioning */
+.menu-box {
+  position: fixed; /* Changed from absolute to fixed for global positioning */
+  top: 70px;
+  right: 20px;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-family: 'Lora', serif; /* Lora font applied */
+  z-index: 999; /* High z-index to appear on all pages */
+  max-width: 90%; /* Prevent overflow */
+  backdrop-filter: blur(10px); /* Add backdrop blur for better visibility */
+}
+
+.menu-box.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu-box li {
+  padding: 15px 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.menu-box li:hover {
+  color: #E6B25C;
+}
+
+/* Theme-aware menu box colors for global use */
+body.light-mode .menu-box {
+  background: rgba(255, 255, 255, 0.95);
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body:not(.light-mode) .menu-box {
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Second Page Styles */
+.second-page {
+  background-color: #000000;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: 'Lora', serif;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.about-content {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.about-content h2 {
+  font-size: 3rem;
+  color: #CC7351;
+  margin-bottom: 2rem;
+}
+
+/* Curve Animation */
+.curve-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decorative-curve {
+  width: 100%;
+  height: 100%;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+}
+
+.decorative-curve.animate-curve {
+  animation: drawCurve 1.5s ease forwards;
+}
+
+@keyframes drawCurve {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Content Layout */
+.about-section {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
+  z-index: 2;
+  gap: 4rem;
+  flex-wrap: wrap; /* Allow wrapping for better responsiveness */
+}
+
+.about-image {
+  flex: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-content {
+  flex: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Style for About Me content */
+.about-content h2 {
+  font-size: 3rem;
+  color: #CC7351;
+  margin-bottom: 2rem;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  max-width: 100%; /* Prevent text overflow */
+  word-wrap: break-word;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .App {
+    padding-left: 20px; /* Reduce left padding on mobile */
+  }
+  
+  .App-header h2 {
+    font-size: 3rem; /* Reduce font size on mobile */
+  }
+  
+  .two-line-text p {
+    font-size: 1.2rem; /* Reduce font size on mobile */
+  }
+  
+  .nav-controls {
+    top: 15px;
+    right: 15px;
+    gap: 15px;
+  }
+  
+  .resume-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    min-width: 140px;
+  }
+  
+  .menu-icon, .theme-toggle {
+    height: 24px;
+  }
+  
+  .menu-box {
+    top: 60px;
+    right: 15px;
+    padding: 15px 25px;
+  }
+  
+  .menu-box li {
+    font-size: 1.3rem;
+    padding: 12px 0;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .nav-controls {
+    gap: 10px;
+  }
+  
+  .resume-button {
+    padding: 6px 12px;
+    font-size: 12px;
+    min-width: 120px;
+  }
+  
+  .menu-box {
+    padding: 12px 20px;
+  }
+  
+  .menu-box li {
+    font-size: 1.1rem;
+    padding: 10px 0;
+  }
+}
+
+.image {
+  width: 70%;
+  height: 350px;
+  border-radius: 16px;
+  object-fit: cover;  /* This ensures the image covers the area properly */
+  max-width: 100%; /* Prevent image overflow */
+}
+
+/* Third Page Styles */
+.third-page {
+  background-color: #000000;
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  font-family: 'Lora', serif;
+  margin: 0;
+  border: none;
+  outline: none;
+  max-width: 100%;
+  overflow-x: hidden !important; /* Ensure no horizontal scroll */
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1200px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.projects-container.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-container h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3rem;
+  color: #CC7351; /* Matching your curve color for consistency */
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform-origin: center !important; /* Fix for transform issues */
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h3 {
+  color: #CC7351;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.project-card p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.project-tech {
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: #E6B25C; /* Using your gold accent color */
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive adjustments for third page */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    padding: 20px;
+  }
+  
+  .projects-container h2 {
+    font-size: 2.5rem;
+  }
+  
+  .project-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .project-card p {
+    font-size: 1rem;
+  }
+}
+
+/* Carousel container and perspective handling */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; /* Allow content to overflow for the 3D effect */
+  max-width: 100%;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  transform: translateZ(0); /* Force hardware acceleration */
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  max-width: 100%; /* Prevent overflow */
+}
+
+.carousel-wrapper.transitioning {
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Individual card styling */
+.carousel-card {
+  position: absolute;
+  width: 350px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Smooth easing */
+  cursor: pointer;
+  overflow: hidden;
+  transform-style: preserve-3d; /* Maintain 3D effect for children */
+  transform-origin: center !important; /* Fix transform issues */
+  max-width: 100%;
+}
+
+.carousel-card.active {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 
+              0 0 30px rgba(204, 115, 81, 0.3);
+  border: 1px solid rgba(204, 115, 81, 0.3);
+}
+
+.card-content {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  backface-visibility: hidden; /* Prevent text from getting blurry during transitions */
+  max-width: 100%;
+}
+
+.carousel-card h3 {
+  color: #CC7351;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.carousel-card p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  flex-grow: 1;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.carousel-card .project-tech {
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.95rem;
+  color: #E6B25C;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+/* Navigation controls */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(204, 115, 81, 0.5);
+  color: #CC7351;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 100;
+  max-width: 90%;
+}
+
+.carousel-control:hover {
+  background: rgba(204, 115, 81, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Equal control positions on both sides */
+.carousel-control.prev {
+  left: 8%;
+}
+
+.carousel-control.next {
+  right: 8%;
+}
+
+/* Navigation dots */
+.carousel-dots {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #CC7351;
+  transform: scale(1.2);
+}
+
+/* Glowing effect for active card */
+/* Glowing effect for active card */
+@keyframes glowRotate {
+  0% {
+    box-shadow: 0 0 20px rgba(204, 115, 81, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(230, 178, 92, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(204, 115, 81, 0.3);
+  }
+}
+
+.carousel-card.active {
+  animation: glowRotate 3s infinite;
+}
+
+/* Add reflection effect */
+.carousel-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.05));
+  transform: rotateX(180deg);
+  pointer-events: none;
+}
+
+/* Loop transition effect - smooth transition between end and beginning */
+@keyframes loopTransition {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.carousel-card.looping {
+  animation: loopTransition 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .carousel-card {
+    width: 320px;
+    height: 380px;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel-card {
+    width: 280px;
+    height: 350px;
+  }
+  
+  .carousel-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-card p {
+    font-size: 1rem;
+  }
+  
+  .carousel-control.prev {
+    left: 5%;
+  }
+  
+  .carousel-control.next {
+    right: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .carousel-container {
+    height: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    height: 400px;
+  }
+  
+  .carousel-card {
+    width: 240px;
+    height: 320px;
+  }
+  
+  .card-content {
+    padding: 20px;
+  }
+  
+  .carousel-control {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Skills Page Styles with Pure Black Background */
+.skills-page {
+  background-color: #000000; /* Pure black background */
+  color: white;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  font-family: 'Lora', serif;
+  position: relative;
+  margin: 0;
+  border: none;
+  outline: none;
+  max-width: 100%;
+  overflow-x: hidden !important; /* Force hidden horizontal overflow */
+}
+
+/* Enhanced Skills Page Chart Text Styling - Dark Mode */
+.skills-page.dark .recharts-cartesian-axis-tick-value,
+.skills-page.dark .recharts-cartesian-axis-tick text,
+.skills-page.dark .recharts-text,
+.skills-page.dark .recharts-cartesian-axis .recharts-cartesian-axis-tick-value,
+.skills-page.dark .recharts-cartesian-axis text,
+.skills-page.dark text,
+.skills-page.dark .recharts-layer text,
+.skills-page.dark .recharts-wrapper text {
+  fill: #ffffff !important;
+  color: #ffffff !important;
+}
+
+/* Skills Page Chart Text Styling - Light Mode */
+.skills-page.light .recharts-cartesian-axis-tick-value,
+.skills-page.light .recharts-cartesian-axis-tick text,
+.skills-page.light .recharts-text,
+.skills-page.light .recharts-cartesian-axis .recharts-cartesian-axis-tick-value,
+.skills-page.light .recharts-cartesian-axis text,
+.skills-page.light text,
+.skills-page.light .recharts-layer text,
+.skills-page.light .recharts-wrapper text {
+  fill: #000000 !important;
+  color: #000000 !important;
+}
+
+/* Additional targeting for skills page with ID selector */
+#skills-page.dark text,
+#skills-page.dark .recharts-text,
+#skills-page.dark .recharts-cartesian-axis-tick-value {
+  fill: #ffffff !important;
+}
+
+#skills-page.light text,
+#skills-page.light .recharts-text,
+#skills-page.light .recharts-cartesian-axis-tick-value {
+  fill: #000000 !important;
+}
+
+.skills-content {
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #CC7351;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.skills-title.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills-chart-container {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease 0.2s, transform 1s ease 0.2s;
+  background-color: rgba(255, 255, 255, 0.02); /* Very subtle background */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 40px;
+  width: 100%;
+  overflow-x: hidden !important; /* Ensure no horizontal scroll */
+  max-width: 100%;
+}
+
+.skills-chart-container.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tooltip styles */
+.custom-tooltip {
+  background-color: rgba(0, 0, 0, 0.95); /* Pure black tooltip */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+}
+
+.tooltip-name {
+  font-size: 1.1rem;
+  color: #CC7351;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.tooltip-value {
+  font-size: 1rem;
+  color: white;
+}
+
+/* Bar animation */
+@keyframes growBar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.skills-description {
+  text-align: center;
+  max-width: 800px;
+  margin: 40px auto 0;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+  padding-left: 10px;
+  padding-right: 10px;
+  word-wrap: break-word;
+}
+
+/* Make the bars animate on entry */
+.recharts-bar-rectangle {
+  transform-origin: bottom;
+  animation: growBar 1.5s ease-out;
+}
+
+/* Style the chart bars */
+.chart-bar {
+  opacity: 0.9; /* Slightly transparent like in the image */
+  transition: opacity 0.3s ease;
+}
+
+.chart-bar:hover {
+  opacity: 1;
+  filter: brightness(1.1);
+}
+
+/* Increase the bar width */
+.recharts-layer.recharts-bar-rectangle rect {
+  width: 40px !important; /* Make bars thicker like in the image */
+}
+
+/* Style the axis labels and ticks */
+.recharts-cartesian-axis-tick-value {
+  font-family: 'Lora', serif;
+  fill: rgba(255, 255, 255, 0.7) !important;
+  font-size: 12px !important;
+}
+
+/* X-axis labels should be visible */
+.recharts-xAxis .recharts-cartesian-axis-tick-value {
+  fill: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-content {
+    padding: 0 10px;
+  }
+  
+  .skills-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .skills-chart-container {
+    padding: 20px 10px;
+  }
+  
+  .skills-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-title {
+    font-size: 2rem;
+  }
+  
+  .skills-description {
+    padding: 0 10px;
+  }
+}
+
+/* Contact Page Styles - Modified to have black background instead of gradient */
+.contact-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 4rem 2rem;
+  background: #000000;
+  color: white;
+  margin: 0;
+  border: none;
+  outline: none;
+  max-width: 100%;
+  overflow-x: hidden !important; /* Force hidden horizontal overflow */
+}
+
+.contact-content {
+  max-width: 1200px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.contact-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.contact-content h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #CC7351;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #CC7351;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.submit-btn {
+  padding: 1rem 2rem;
+  background-color: #CC7351;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  max-width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #b05e3e;
+  transform: translateY(-3px);
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  color: #CC7351;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: #CC7351;
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments for contact page */
+@media (max-width: 768px) {
+  .contact-content h2 {
+    font-size: 2rem;
+  }
+  
+  .contact-form {
+    padding: 1.5rem;
+  }
+  
+  .contact-details {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Fix specific issues with spacing between pages */
+#first-page, #second-page, #third-page, #skills-page, #contact-page {
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: none;
+  border-bottom: none;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Remove any divider elements */
+.page-divider {
+  display: none;
+}
+
+/* Light mode for all pages - Enhanced for global navigation */
+body.light-mode {
+  background-color: #ffffff;
+}
+
+body.light-mode #first-page,
+body.light-mode .App {
+  background-color: #f9f9f9;
+}
+
+body.light-mode #second-page, 
+body.light-mode .third-page, 
+body.light-mode .skills-page, 
+body.light-mode .contact-page {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-mode .project-card,
+body.light-mode .skills-chart-container,
+body.light-mode .contact-form {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+body.light-mode .carousel-card {
+  background: rgba(0, 0, 0, 0.05);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Keep accent colors consistent in both modes */
+body.light-mode h2,
+body.light-mode h3 {
+  color: #CC7351;
+}
+
+body.light-mode .project-tech,
+body.light-mode .data-analyst {
+  color: #E6B25C;
+}
+
+/* Light mode navigation adjustments */
+body.light-mode .nav-controls .resume-button {
+  color: black;
+  border-color: black;
+}
+
+body.light-mode .nav-controls .menu-icon,
+body.light-mode .nav-controls .theme-toggle {
+  color: black;
+}
+
+/* Light mode form styling */
+body.light-mode .contact-form {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #000000;
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+  border-color: #CC7351;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .form-group label {
+  color: #000000;
+}
+
+body.light-mode .contact-item {
+  color: #000000;
+}
+
+body.light-mode .social-link {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+/* Light mode skills page adjustments */
+body.light-mode .skills-page {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-mode .skills-title {
+  color: #CC7351;
+}
+
+body.light-mode .skills-description {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+body.light-mode .skills-chart-container {
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Light mode tooltip */
+body.light-mode .custom-tooltip {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .tooltip-name {
+  color: #CC7351;
+}
+
+body.light-mode .tooltip-value {
+  color: #000000;
+}
+
+/* Ensure the animate-underline class works properly */
+.animate-underline {
+  width: 100% !important;
+}
+
+/* Global overlay for menu when open - prevents interaction with other elements */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure navigation stays on top of everything */
+.nav-controls,
+.menu-box {
+  z-index: 1001;
+}
+
+/* Additional responsive improvements for very small screens */
+@media (max-width: 320px) {
+  .nav-controls {
+    top: 10px;
+    right: 10px;
+    gap: 8px;
+  }
+  
+  .resume-button {
+    padding: 4px 8px;
+    font-size: 10px;
+    min-width: 100px;
+  }
+  
+  .menu-icon, .theme-toggle {
+    height: 20px;
+  }
+  
+  .menu-box {
+    top: 50px;
+    right: 10px;
+    padding: 10px 15px;
+  }
+  
+  .menu-box li {
+    font-size: 1rem;
+    padding: 8px 0;
+  }
+}
+
+/* Smooth transitions for theme changes across all pages */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Performance optimizations */
+.carousel-card,
+.project-card,
+.skills-chart-container,
+.contact-form {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Accessibility improvements */
+.nav-controls button,
+.nav-controls .resume-button,
+.nav-controls .menu-icon,
+.nav-controls .theme-toggle {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.nav-controls button:focus,
+.nav-controls .resume-button:focus,
+.nav-controls .menu-icon:focus,
+.nav-controls .theme-toggle:focus {
+  outline-color: #CC7351;
+}
+
+.menu-box li:focus {
+  outline: 2px solid #CC7351;
+  outline-offset: 2px;
+}
+
+/* Prevent text selection on navigation elements */
+.nav-controls,
+.menu-box {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Ensure proper box-sizing for all form elements */
+input, textarea, button {
+  box-sizing: border-box;
+}
+
+/* Final overflow protection */
+html, body, .app-container, .App, #root {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  position: relative;
+}
