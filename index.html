@@ -659,6 +659,62 @@
             color: rgba(0, 0, 0, 0.4);
         }
 
+        /* Role Subsection Styling */
+        .role-subsection {
+            margin-bottom: 24px;
+            padding-left: 20px;
+            border-left: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (min-width: 768px) {
+            .role-subsection {
+                margin-bottom: 30px;
+                padding-left: 30px;
+            }
+        }
+
+        body.light-mode .role-subsection {
+            border-left-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .role-subsection:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .role-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        @media (min-width: 768px) {
+            .role-title {
+                font-size: 20px;
+            }
+        }
+
+        body.light-mode .role-title {
+            color: #000;
+        }
+
+        .role-duration {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+
+        @media (min-width: 768px) {
+            .role-duration {
+                font-size: 14px;
+            }
+        }
+
+        body.light-mode .role-duration {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
         /* Skills Tags */
         .skills-tags {
             display: flex;
@@ -1676,59 +1732,54 @@
             <div class="container">
                 <h2 class="section-title">Experience</h2>
                 
-                <!-- pigybak - Chief of Staff Senior Data Analyst -->
+                <!-- pigybak - Combined Experience with Progression -->
                 <div class="experience-item">
                     <div class="exp-header">
-                        <h3 class="exp-title">Chief of Staff Senior Data Analyst</h3>
-                        <div class="exp-company">pigybak</div>
+                        <h3 class="exp-title">pigybak</h3>
                         <div class="exp-location">Ohio, United States</div>
                         <div class="exp-details">
-                            <span class="exp-duration">Jan 2026 - Present · 1 mo</span>
+                            <span class="exp-duration">Sep 2025 - Present · 5 mos</span>
                             <span class="exp-type">Internship</span>
                         </div>
                     </div>
-                    <div class="exp-description">
-                        <ul>
-                            <li>Drive executive operations by managing leadership agendas, tracking action items, and preparing weekly decision memos</li>
-                            <li>Conduct targeted research and analysis to support go-to-market experiments and strategic prioritization</li>
-                            <li>Share clear, concise updates that align teams on goals, outcomes, and next steps</li>
-                        </ul>
-                        <div class="skills-tags">
-                            <span class="skill-tag">Executive Operations</span>
-                            <span class="skill-tag">Strategic Analysis</span>
-                            <span class="skill-tag">Go-to-Market Strategy</span>
-                            <span class="skill-tag">Decision Support</span>
+                    
+                    <!-- Current Role -->
+                    <div class="role-subsection">
+                        <div class="role-title">Chief of Staff Senior Data Analyst</div>
+                        <div class="role-duration">Jan 2026 - Present · 1 mo</div>
+                        <div class="exp-description">
+                            <ul>
+                                <li>Drive executive operations by managing leadership agendas, tracking action items, and preparing weekly decision memos</li>
+                                <li>Conduct targeted research and analysis to support go-to-market experiments and strategic prioritization</li>
+                                <li>Share clear, concise updates that align teams on goals, outcomes, and next steps</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
 
-                <!-- pigybak - Data Analytics Lead Intern -->
-                <div class="experience-item">
-                    <div class="exp-header">
-                        <h3 class="exp-title">Data Analytics Lead Intern</h3>
-                        <div class="exp-company">pigybak</div>
-                        <div class="exp-location">Remote</div>
-                        <div class="exp-details">
-                            <span class="exp-duration">Sep 2025 - Dec 2025 · 4 mos</span>
-                            <span class="exp-type">Internship</span>
+                    <!-- Previous Role -->
+                    <div class="role-subsection">
+                        <div class="role-title">Data Analytics Lead Intern</div>
+                        <div class="role-duration">Sep 2025 - Dec 2025 · 4 mos</div>
+                        <div class="exp-description">
+                            <ul>
+                                <li>Lead the analytics team in building scalable solutions, resolving technical blockers, and organizing project tasks efficiently</li>
+                                <li>Examine product, user, and market data to generate actionable insights that inform business strategy</li>
+                                <li>Design and maintain dashboards and reports to support marketing, operations, and product decision-making</li>
+                                <li>Monitor user engagement, growth metrics, and campaign performance; identify trends and recommend improvements</li>
+                                <li>Collaborate with interns and department leads to drive product launches, community initiatives, and business development efforts</li>
+                                <li>Contribute to forecasting, A/B test planning, and ad-hoc analytics projects to support pigybak's growth objectives</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="exp-description">
-                        <ul>
-                            <li>Lead the analytics team in building scalable solutions, resolving technical blockers, and organizing project tasks efficiently</li>
-                            <li>Examine product, user, and market data to generate actionable insights that inform business strategy</li>
-                            <li>Design and maintain dashboards and reports to support marketing, operations, and product decision-making</li>
-                            <li>Monitor user engagement, growth metrics, and campaign performance; identify trends and recommend improvements</li>
-                            <li>Collaborate with interns and department leads to drive product launches, community initiatives, and business development efforts</li>
-                            <li>Contribute to forecasting, A/B test planning, and ad-hoc analytics projects to support pigybak's growth objectives</li>
-                        </ul>
-                        <div class="skills-tags">
-                            <span class="skill-tag">Team Leadership</span>
-                            <span class="skill-tag">Dashboard Design</span>
-                            <span class="skill-tag">A/B Testing</span>
-                            <span class="skill-tag">Product Analytics</span>
-                            <span class="skill-tag">Growth Metrics</span>
-                        </div>
+
+                    <div class="skills-tags">
+                        <span class="skill-tag">Executive Operations</span>
+                        <span class="skill-tag">Strategic Analysis</span>
+                        <span class="skill-tag">Team Leadership</span>
+                        <span class="skill-tag">Dashboard Design</span>
+                        <span class="skill-tag">A/B Testing</span>
+                        <span class="skill-tag">Product Analytics</span>
+                        <span class="skill-tag">Growth Metrics</span>
                     </div>
                 </div>
 
